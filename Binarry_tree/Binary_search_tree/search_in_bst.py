@@ -28,5 +28,26 @@ class Solution(object):
                 
         return self.searchBST(root, val)
 
+    def searchBST(self, root, val):
+        """
+        :type root: Optional[TreeNode]
+        :type val: int
+        :rtype: Optional[TreeNode]
+        """
 
+        if root == None:
+            return None
+        
+        if val == root.val:
+            return root
+        
+        elif val > root.val: #check right side
+            if root.right:
+               return self.searchBST(root.right, val)
+        
+        elif val < root.val: #check left side
+            if root.left:
+               return self.searchBST(root.left, val)
+                
+       
         
